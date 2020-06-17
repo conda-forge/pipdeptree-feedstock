@@ -1,5 +1,5 @@
 {% set name = "pipdeptree" %}
-{% set version = "0.13.2" %}
+{% set version = "1.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: f54a2388cfe3cbaa08f4702ee8957f0f3f0d6ff65899833ea57f12f2fc4ae0c1
+  sha256: 5fe866a38113d28d527033ececc57b8e86df86b7c29edbacb33f41ee50f75b31
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - pipdeptree = pipdeptree:main
 
@@ -35,7 +35,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: 'Displays installed python packages in form of a dependency tree.'
+  summary: Displays installed python packages in form of a dependency tree.
   description: |
     pipdeptree is a command line utility for displaying the
     installed python packages in form of a dependency tree. It works for packages
