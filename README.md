@@ -5,9 +5,13 @@ Home: http://github.com/naiquevin/pipdeptree
 
 Package license: MIT
 
-Feedstock license: BSD 3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pipdeptree-feedstock/blob/master/LICENSE.txt)
 
 Summary: Displays installed python packages in form of a dependency tree.
+
+Development: http://github.com/naiquevin/pipdeptree
+
+Documentation: https://github.com/naiquevin/pipdeptree
 
 pipdeptree is a command line utility for displaying the
 installed python packages in form of a dependency tree. It works for packages
