@@ -1,5 +1,5 @@
 {% set name = "pipdeptree" %}
-{% set version = "2.2.0" %}
+{% set version = "2.3.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 21a89e77d6eae635685e8af5ecd56561f092f8216bb290e7ae5362885d611f60
+  sha256: 30699521e1c5861b08d29d92398f67e9a5d7f613092257fff2a8bde3c948e05b
 
 build:
   noarch: python
