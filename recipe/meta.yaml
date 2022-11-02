@@ -1,5 +1,5 @@
 {% set name = "pipdeptree" %}
-{% set version = "2.2.0" %}
+{% set version = "2.3.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 21a89e77d6eae635685e8af5ecd56561f092f8216bb290e7ae5362885d611f60
+  sha256: 9d666f77ff1b9528d01b3d98594096484f56de70d752abe22f13e681be239bd8
 
 build:
   noarch: python
@@ -20,6 +20,8 @@ requirements:
   host:
     - python >=3.6
     - pip
+    - hatchling
+    - hatch-vcs
   run:
     - python >=3.6
     - pip
