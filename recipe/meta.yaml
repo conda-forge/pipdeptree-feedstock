@@ -17,11 +17,10 @@ build:
     - pipdeptree = pipdeptree:main
 
 requirements:
-  build:
-    - hatch
   host:
     - python >=3.6
     - pip
+    - hatchling
   run:
     - python >=3.6
     - pip
