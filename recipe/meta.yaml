@@ -21,6 +21,7 @@ requirements:
     - python >=3.6
     - pip
     - hatchling
+    - hatch-vcs
   run:
     - python >=3.6
     - pip
