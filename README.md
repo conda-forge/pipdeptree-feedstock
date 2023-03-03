@@ -1,11 +1,11 @@
-About pipdeptree
-================
+About pipdeptree-feedstock
+==========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pipdeptree-feedstock/blob/main/LICENSE.txt)
 
 Home: http://github.com/naiquevin/pipdeptree
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pipdeptree-feedstock/blob/main/LICENSE.txt)
 
 Summary: Displays installed python packages in form of a dependency tree.
 
