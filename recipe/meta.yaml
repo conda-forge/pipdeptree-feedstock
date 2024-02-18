@@ -1,36 +1,38 @@
 {% set name = "pipdeptree" %}
-{% set version = "2.9.1" %}
+{% set version = "2.14.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: ea414a34c06c67e477c9d689961f4228e9b2154f2778087db021ede9341ef336
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pipdeptree-{{ version }}.tar.gz
+  sha256: 3296195250e00d37638f2cce70495e3345645b4bbecc1c38ac39339f1511d9b5
 
 build:
-  noarch: python
-  number: 0
-  script: {{ PYTHON }} -m pip install . -vv
   entry_points:
-    - pipdeptree = pipdeptree:main
+    - pipdeptree = pipdeptree.__main__:main
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 0
 
 requirements:
   host:
-    - python >=3.6
+    - python >=3.8
+    - hatch-vcs >=0.4
+    - hatchling >=1.18
     - pip
-    - hatchling
-    - hatch-vcs
   run:
-    - python >=3.6
-    - pip
+    - python >=3.8
 
 test:
   imports:
     - pipdeptree
   commands:
-    - pipdeptree
+    - pip check
+    - pipdeptree --help
+  requires:
+    - pip
 
 about:
   home: http://github.com/naiquevin/pipdeptree
@@ -54,3 +56,5 @@ extra:
   recipe-maintainers:
     - dlqqq
     - cdiener
+    - rxn7706
+
