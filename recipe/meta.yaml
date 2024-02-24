@@ -1,5 +1,5 @@
 {% set name = "pipdeptree" %}
-{% set version = "2.14.0" %}
+{% set version = "2.15.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pipdeptree-{{ version }}.tar.gz
-  sha256: 3296195250e00d37638f2cce70495e3345645b4bbecc1c38ac39339f1511d9b5
+  sha256: b80098c9337f27b1d612c35223aa5a655c9a9e32021d7d0d0091e8dbce78fbeb
 
 build:
   entry_points:
