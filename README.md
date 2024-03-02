@@ -159,5 +159,5 @@ Feedstock Maintainers
 
 * [@cdiener](https://github.com/cdiener/)
 * [@dlqqq](https://github.com/dlqqq/)
-* [@rxn7706](https://github.com/rxn7706/)
+* [@rxm7706](https://github.com/rxm7706/)
 
