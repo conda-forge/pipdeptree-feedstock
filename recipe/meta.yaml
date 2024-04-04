@@ -1,5 +1,5 @@
 {% set name = "pipdeptree" %}
-{% set version = "2.16.2" %}
+{% set version = "2.17.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pipdeptree-{{ version }}.tar.gz
-  sha256: 96ecde8e6f40c95998491a385e4af56d387f94ff7d3b8f209aa34982a721bc43
+  sha256: f2c19758c023bca0c08fa085ced2660cff066a108a792b1a72af5b5344c47ae0
 
 build:
   entry_points:
@@ -23,6 +23,7 @@ requirements:
     - hatchling >=1.18
     - pip
   run:
+    - packaging >=23.1
     - pip >=23.1.2
     - python >=3.8
 
