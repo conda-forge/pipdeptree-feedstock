@@ -22,7 +22,6 @@ be tedious to resolve conflicting dependencies because pip doesn't yet have
 true dependency resolution (more on this later). This utility tries to solve
 this problem.
 
-
 Current build status
 ====================
 

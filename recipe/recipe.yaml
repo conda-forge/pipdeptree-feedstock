@@ -1,46 +1,45 @@
-{% set name = "pipdeptree" %}
-{% set version = "2.30.0" %}
+context:
+  name: pipdeptree
+  version: 2.30.0
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: ${{ name|lower }}
+  version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pipdeptree-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/pipdeptree-${{ version }}.tar.gz
   sha256: 0f78fe4bcf36a72d0d006aee0f4e315146cb278e4c4d51621f370a3d6b8861c1
 
 build:
-  entry_points:
-    - pipdeptree = pipdeptree.__main__:main
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 1
+  python:
+    entry_points:
+      - pipdeptree = pipdeptree.__main__:main
 
 requirements:
   host:
-    - python {{ python_min }}
+    - python ${{ python_min }}.*
     - hatch-vcs >=0.4
     - hatchling >=1.18
     - pip
   run:
     - packaging >=25
     - pip >=25.2
-    - python >={{ python_min }}
+    - python >=${{ python_min }}
 
-test:
-  imports:
-    - pipdeptree
-  commands:
-    - pip check
-    - pipdeptree --help
-  requires:
-    - pip
-    - python {{ python_min }}
+tests:
+  - python:
+      imports:
+        - pipdeptree
+      python_version: ${{ python_min }}.*
+  - script:
+      - pipdeptree --help
 
 about:
-  home: http://github.com/naiquevin/pipdeptree
+  homepage: http://github.com/naiquevin/pipdeptree
   license: MIT
-  license_family: MIT
   license_file: LICENSE
   summary: Displays installed python packages in form of a dependency tree.
   description: |
@@ -52,8 +51,8 @@ about:
     be tedious to resolve conflicting dependencies because pip doesn't yet have
     true dependency resolution (more on this later). This utility tries to solve
     this problem.
-  doc_url: https://github.com/naiquevin/pipdeptree
-  dev_url: http://github.com/naiquevin/pipdeptree
+  documentation: https://github.com/naiquevin/pipdeptree
+  repository: http://github.com/naiquevin/pipdeptree
 
 extra:
   recipe-maintainers:
