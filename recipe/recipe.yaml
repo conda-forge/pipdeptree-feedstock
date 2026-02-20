@@ -1,6 +1,6 @@
 context:
   name: pipdeptree
-  version: 2.30.0
+  version: 2.31.0
 
 package:
   name: ${{ name|lower }}
@@ -8,12 +8,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/pipdeptree-${{ version }}.tar.gz
-  sha256: 0f78fe4bcf36a72d0d006aee0f4e315146cb278e4c4d51621f370a3d6b8861c1
+  sha256: b3863e889761be597cc68cc38b3845f670ceab8d690f7b6728aa396d1e1be458
 
 build:
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
   python:
     entry_points:
       - pipdeptree = pipdeptree.__main__:main
@@ -25,10 +25,9 @@ requirements:
     - hatchling >=1.18
     - pip
   run:
-    - packaging >=25
+    - packaging >=26
     - pip >=25.2
     - python >=${{ python_min }}
-
 tests:
   - python:
       imports:
