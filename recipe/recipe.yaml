@@ -1,6 +1,6 @@
 context:
   name: pipdeptree
-  version: "2.35.0"
+  version: "2.35.1"
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/pipdeptree-${{ version }}.tar.gz
-  sha256: e6cb5213d5b4d2c50258ba86f4ae06ced653111c664fe088c379f3c9a4d41562
+  sha256: 4bbcffe7d1edead00f5ca64c265b0bf902c919f872637e055924c3bea8c615d1
 
 build:
   noarch: python
