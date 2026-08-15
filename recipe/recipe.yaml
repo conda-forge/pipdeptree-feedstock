@@ -1,6 +1,6 @@
 context:
   name: pipdeptree
-  version: "3.1.1"
+  version: 4.2.1
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/pipdeptree-${{ version }}.tar.gz
-  sha256: a986376399e52c9ec7515ef69df7a2dbda0bae0be1cec90dcae23a4ba6262c89
+  sha256: c6c5d8035c191adfb2b673c57c921288159dbad553e0184229671ed0d086450c
 
 build:
   noarch: python
@@ -25,9 +25,9 @@ requirements:
     - hatchling >=1.18
     - pip
   run:
-    - packaging >=26
     - python >=${{ python_min }}
-    - tomli >=2
+    - nab-python >=0.0.11
+    - nab-index >=0.0.11
 tests:
   - python:
       imports:
